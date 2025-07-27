@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpotLight - About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fafbfc;
+    }
+    header {
+      background: #fff;
+      padding: 0;
+      border-bottom: none;
+      box-shadow: none;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 40px 0 40px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 36px;
+      margin-right: 10px;
+    }
+    .logo-title {
+      color: #002D72;
+      font-size: 1.7rem;
+      font-family: 'Fredoka', 'Roboto', sans-serif;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    .header-icons {
+      display: flex;
+      align-items: center;
+    }
+    .mail-icon {
+      height: 28px;
+      width: 28px;
+      margin-left: 20px;
+    }
+    .header-divider {
+      border: none;
+      border-top: 2px solid #ccc;
+      margin: 16px 0 0 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 0 0 0 40px;
+      margin: 0;
+      align-items: center;
+      height: 48px;
+      position: relative;
+    }
+    nav ul li {
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #333;
+      position: relative;
+    }
+    nav ul li.topics-dropdown {
+      position: relative;
+      overflow: visible;
+    }
+    nav ul li .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 180px;
+      box-shadow: 0 6px 24px 0 rgba(35,64,142,0.13);
+      border-radius: 0;
+      padding: 0;
+      z-index: 100;
+      overflow: visible;
+      max-height: none;
+      box-sizing: border-box;
+    }
+    nav ul li.topics-dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    nav ul li .dropdown-menu li {
+      color: #23408e;
+      font-size: 1rem;
+      padding: 0;
+      white-space: nowrap;
+      border-radius: 0;
+      background: #fff;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    nav ul li .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+    nav ul li .dropdown-menu .dropdown-link {
+      color: #23408e;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 14px 24px;
+      background: #fff;
+      transition: background 0.18s, color 0.18s;
+      border-radius: 0;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    nav ul li .dropdown-menu .dropdown-link:hover {
+      background: #FFCC00;
+      color: #23408e;
+      text-decoration: none;
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    /* About Us Page Styles */
+    .about-hero {
+      background: #002D72;
+      color: #fff;
+      text-align: center;
+      padding: 80px 40px;
+    }
+    .about-hero h1 {
+      font-family: 'Fredoka', 'Roboto', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+      color: #FFCC00;
+    }
+    .about-hero p {
+      font-size: 1.25rem;
+      margin-bottom: 32px;
+      color: #fff;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .team-section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .team-section h2 {
+      font-family: 'Fredoka', 'Roboto', sans-serif;
+      font-size: 2.2rem;
+      color: #002D72;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .team-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(35,64,142,0.13);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(35,64,142,0.18);
+    }
+    .team-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .team-card-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .team-card-content {
+      padding: 24px;
+    }
+    .team-card-name {
+      font-family: 'Fredoka', 'Roboto', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #002D72;
+      margin-bottom: 8px;
+    }
+    .team-card-department {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 16px;
+    }
+    .team-card-description {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .footer-bar {
+      background: #FFCC00;
+      color: #fff;
+      text-align: center;
+      font-size: 1.08rem;
+      padding: 24px 0 20px 0;
+      letter-spacing: 0.5px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+      .about-hero p {
+        font-size: 1rem;
+      }
+      .team-section {
+        padding: 60px 20px;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .team-card-image {
+        height: 200px;
+      }
+    }
+    nav ul li .nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0 4px;
+  transition: color 0.18s;
+}
+nav ul li .nav-link:hover {
+  color: #23408e;
+  text-decoration: none;
+}
+nav ul li .nav-link:active {
+  text-decoration: none;
+}
+nav a,
+nav ul li a,
+nav ul li .nav-link,
+nav ul li .nav-link:hover,
+nav ul li .nav-link:focus,
+nav ul li .nav-link:active,
+nav a:visited,
+nav ul li a:visited,
+nav ul li .nav-link:visited {
+  text-decoration: none !important;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <img src="https://img.icons8.com/ios-filled/50/FFCC00/idea.png" alt="Logo">
+        <h2 class="logo-title">SpotLight</h2>
+      </div>
+      <div class="header-icons">
+        <img src="https://img.icons8.com/material-outlined/24/002D72/new-post.png" alt="Contact" class="mail-icon">
+      </div>
+    </div>
+    <hr class="header-divider">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="topics-dropdown">Articles ▾
+          <ul class="dropdown-menu">
+            <li><a href="travel.html" class="dropdown-link">A Travel Guide To Japan For First-Timers</a></li>
+            <li><a href="reality.html" class="dropdown-link">Reality through my eyes</a></li>
+            <li><a href="ai.html" class="dropdown-link">Everyday Intelligence</a></li>
+            <li><a href="#" class="dropdown-link">Topic 4</a></li>
+            <li><a href="#" class="dropdown-link">Topic 5</a></li>
+            <li><a href="#" class="dropdown-link">Topic 6</a></li>
+            <li><a href="#" class="dropdown-link">Topic 7</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="about-hero">
+    <h1>Meet Our Team</h1>
+    <p>We are a passionate group of writers, designers, and creators dedicated to bringing you the most engaging and informative content. Each member of our team brings unique expertise and perspective to make SpotLight your go-to destination for quality articles and stories.</p>
+  </div>
+
+  <div class="team-section">
+    <h2>Our Team Members</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-card-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face');"></div>
+        <div class="team-card-content">
+          <h3 class="team-card-name">Javie Alfaro</h3>
+          <p class="team-card-department">Editorial Director</p>
+          <p class="team-card-description">Leading our editorial vision with over 8 years of experience in digital content creation and storytelling.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-image" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face');"></div>
+        <div class="team-card-content">
+          <h3 class="team-card-name">Tyrone Aquino</h3>
+          <p class="team-card-department">Technology Writer</p>
+          <p class="team-card-description">Specializing in AI, emerging technologies, and digital innovation with a background in computer science.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-image" style="background-image: url('japan.jpg');"></div>
+        <div class="team-card-content">
+          <h3 class="team-card-name">Matt Lara</h3>
+          <p class="team-card-department">A Travel Guide to Japan for First-Timers</p>
+          <p class="team-card-description">Wondering how to make the most out of your visit in Japan?
+
+            Whether you're planning your first international trip or just curious about what Japan has...</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-image" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=300&fit=crop&crop=face');"></div>
+        <div class="team-card-content">
+          <h3 class="team-card-name">Miguel Limpin</h3>
+          <p class="team-card-department">Sports Analyst</p>
+          <p class="team-card-description">Providing in-depth sports coverage and analysis with a focus on strategy and human stories in athletics.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-image" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop&crop=face');"></div>
+        <div class="team-card-content">
+          <h3 class="team-card-name">Gabriel Magat Jr.</h3>
+          <p class="team-card-department">Creative Director</p>
+          <p class="team-card-description">Overseeing visual storytelling and design to create engaging, memorable content experiences.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-image" style="background-image: url('realiy-check1.jpg');"></div>
+        <div class="team-card-content">
+          <h3 class="team-card-name">Jeirold Ruiz</h3>
+          <p class="team-card-department">Reality through my eyes</p>
+          <p class="team-card-description">Reality isn’t reality, is what I initially thought after watching the video. How can I know that there...</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-image" style="background-image: url('https://www.governanceinstitute.com.au/app/uploads/2024/08/AI-Webpage.png');"></div>
+        <div class="team-card-content">
+          <h3 class="team-card-name">Joalnes Vender</h3>
+          <p class="team-card-department">Everyday Intelligence</p>
+          <p class="team-card-description">How Artificial Intelligence Quietly Powers Our Daily Lives. From smart assistants to personalized...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">© 2024. SpotLight – Curating Stories, Celebrating Culture. All Rights Reserved.</div>
+  <button id="scrollToTopBtn" title="Back to top">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#23408e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="11" fill="#fff"/><polyline points="7 13 12 8 17 13"/></svg>
+  </button>
+</body>
+<script>
+// Scroll to top button logic
+const scrollBtn = document.getElementById('scrollToTopBtn');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 200) {
+    scrollBtn.style.display = 'flex';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+<style>
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #FFCC00;
+  box-shadow: 0 6px 24px 0 rgba(35,64,142,0.22), 0 1.5px 6px 0 rgba(0,0,0,0.10);
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+}
+#scrollToTopBtn:hover {
+  background: #23408e;
+  box-shadow: 0 10px 36px 0 rgba(35,64,142,0.28), 0 2px 8px 0 rgba(0,0,0,0.13);
+}
+#scrollToTopBtn svg {
+  display: block;
+}
+</style>
+</html> 

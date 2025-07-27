@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpotLight - Reaction article</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    html, body {
+  overflow-x: hidden;
+}
+    header {
+      background: #fff;
+      padding: 0;
+      border-bottom: none;
+      box-shadow: none;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 40px 0 40px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 36px;
+      margin-right: 10px;
+    }
+    .logo-title {
+      color: #002D72;
+      font-size: 1.7rem;
+      font-family: 'Fredoka', 'Roboto', sans-serif;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    .header-icons {
+      display: flex;
+      align-items: center;
+    }
+    .mail-icon {
+      height: 28px;
+      width: 28px;
+      margin-left: 20px;
+    }
+    .header-divider {
+      border: none;
+      border-top: 2px solid #ccc;
+      margin: 16px 0 0 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 0 0 0 40px;
+      margin: 0;
+      align-items: center;
+      height: 48px;
+      position: relative;
+    }
+    nav ul li {
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #333;
+      position: relative;
+    }
+    /* Dropdown styles */
+    nav ul li.topics-dropdown {
+      position: relative;
+      overflow: visible;
+    }
+    nav ul li .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 180px;
+      box-shadow: 0 6px 24px 0 rgba(35,64,142,0.13);
+      border-radius: 0;
+      padding: 0;
+      z-index: 100;
+      overflow: visible;
+      max-height: none;
+      box-sizing: border-box;
+    }
+    nav ul li.topics-dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    nav ul li .dropdown-menu li {
+      color: #23408e;
+      font-size: 1rem;
+      padding: 14px 24px;
+      white-space: nowrap;
+      transition: background 0.18s, color 0.18s;
+      border-radius: 0;
+      background: #fff;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    nav ul li .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+    nav ul li .dropdown-menu li:hover {
+      background: #FFCC00;
+      color: #23408e;
+    }
+    nav ul li .dropdown-menu .dropdown-link {
+      color: #23408e;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 14px 24px;
+      background: #fff;
+      transition: background 0.18s, color 0.18s;
+      border-radius: 0;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    nav ul li .dropdown-menu .dropdown-link:hover {
+      background: #FFCC00;
+      color: #23408e;
+      text-decoration: none;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    .hero {
+      background: url('file-QX13Boh82fHZALe3cHoJn2') no-repeat center center/cover;
+      height: 400px;
+      width: 100%;
+      display: none;
+    }
+    .hero-banner {
+      width: 100vw;
+      min-width: 100vw;
+      left: 0;
+      right: 0;
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
+      overflow: hidden;
+    }
+    .hero-banner-img {
+      width: 100vw;
+      min-width: 100vw;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .hero-banner-img {
+        height: 220px;
+      }
+    }
+    .hero-desc {
+      background: #fff;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px 20px 20px;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .yellow-bg {
+      background-color: #FFCC00;
+      padding-top: 40px;
+      padding-bottom: 60px;
+      width: 100vw;
+      min-width: 100vw;
+      left: 0;
+      right: 0;
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .fullwidth-where {
+      width: 100vw;
+      min-width: 100vw;
+      left: 0;
+      right: 0;
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .where-container.where-center {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .where-title {
+      text-align: left;
+      font-size: 2.2rem;
+      margin-left: 0;
+      margin-bottom: 32px;
+      color: #222;
+    }
+    .card-container {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: nowrap;
+      width: 100%;
+      max-width: 100%;
+    }
+    @media (max-width: 1100px) {
+      .card-container {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+    }
+    @media (max-width: 900px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+    .card {
+      width: 320px;
+      background: white;
+      padding: 24px 20px 20px 20px;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+      transition: transform 0.25s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0.2,0.2,1), width 0.25s cubic-bezier(0.4,0.2,0.2,1);
+    }
+    .card:hover {
+      transform: scaleX(1.08) scaleY(1.04);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      z-index: 2;
+    }
+    @media (max-width: 1100px) {
+      .card-container {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+      .card {
+        width: 90vw;
+        max-width: 400px;
+        transition: transform 0.25s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0.2,0.2,1), width 0.25s cubic-bezier(0.4,0.2,0.2,1);
+      }
+      .card:hover {
+        transform: scale(1.03);
+      }
+    }
+    .where-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+    .card ul {
+      padding-left: 18px;
+      margin: 0;
+      text-align: left;
+    }
+    .card li {
+      font-size: 1.08rem;
+      margin-bottom: 0;
+      color: #222;
+      line-height: 1.7;
+    }
+    .foods-section img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    .circle-imgs {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    .foods-section ul {
+      padding-left: 20px;
+    }
+    .tips-footer {
+      background: #23408e;
+      color: #fff;
+      padding: 56px 0 40px 0;
+      margin-top: 0;
+      border-radius: 0;
+      box-shadow: none;
+      width: 100vw;
+      min-width: 100vw;
+      left: 0;
+      right: 0;
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .tips-container.tips-center {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tips-modern .tips-title-pill {
+      display: inline-block;
+      background: #FFCC00;
+      color: #23408e;
+      font-size: 2rem;
+      font-weight: 500;
+      padding: 16px 48px;
+      border-radius: 32px;
+      margin-bottom: 32px;
+      margin-left: 0;
+      box-shadow: 0 4px 18px rgba(255,204,0,0.13);
+      letter-spacing: 0.5px;
+      box-sizing: border-box;
+    }
+    .tips-footer p {
+      font-size: 1.6rem;
+      margin-bottom: 28px;
+      line-height: 1.7;
+      color: #fff;
+      max-width: 900px;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+    }
+    .tips-footer ul {
+      list-style-type: disc;
+      padding-left: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #fff;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+    .tips-footer ul li {
+      font-size: 110%;
+      margin-bottom: 18px;
+      text-align: left;
+    }
+    .tips-footer ul li strong {
+      color: #FFCC00;
+    }
+    .head1 {
+      color: #002D72;
+    }
+    .foods-section {
+      background: #fff;
+      border-radius: 0;
+      box-shadow: none;
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+    .foods-modern {
+      padding-top: 40px;
+      padding-bottom: 60px;
+      background: #fff;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .foods-title-pill {
+      display: inline-block;
+      background: #23408e;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding: 16px 48px;
+      border-radius: 32px;
+      margin-bottom: 32px;
+      margin-left: 24px;
+      box-shadow: 0 4px 18px rgba(35,64,142,0.13);
+      letter-spacing: 0.5px;
+      box-sizing: border-box;
+    }
+    .foods-imgs-modern {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-bottom: 32px;
+    }
+    .food-circle-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+      border: 6px solid #fff;
+      background: #fff;
+      transition: transform 0.22s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.22s cubic-bezier(0.4,0.2,0.2,1);
+    }
+    .food-circle-img:hover {
+      transform: scale(1.13);
+      box-shadow: 0 8px 32px rgba(35,64,142,0.18);
+      z-index: 2;
+    }
+    .foods-list-modern {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 0;
+      list-style: disc inside;
+      font-size: 1.08rem;
+      color: #222;
+      line-height: 1.8;
+    }
+    .foods-list-modern li {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+    .footer-bar {
+      background: #FFCC00;
+      color: #fff;
+      text-align: center;
+      font-size: 1.08rem;
+      padding: 24px 0 20px 0;
+      letter-spacing: 0.5px;
+      font-family: 'Roboto', sans-serif;
+    }
+    nav ul li .nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0 4px;
+  transition: color 0.18s;
+}
+nav ul li .nav-link:hover {
+  color: #23408e;
+  text-decoration: none;
+}
+nav ul li .nav-link:active {
+  text-decoration: none;
+}
+nav a,
+nav ul li a,
+nav ul li .nav-link,
+nav ul li .nav-link:hover,
+nav ul li .nav-link:focus,
+nav ul li .nav-link:active,
+nav a:visited,
+nav ul li a:visited,
+nav ul li .nav-link:visited {
+  text-decoration: none !important;
+}
+
+/* Section Styles sa akin*/
+#p1, #p2 {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(35,64,142,0.10);
+  padding: 40px 32px;
+  max-width: 900px;
+  margin: 32px auto;
+  transition: box-shadow 0.22s;
+}
+#p1:hover, #p2:hover {
+  box-shadow: 0 8px 32px rgba(35,64,142,0.18);
+}
+#p1 h1, #p2 h1 {
+  color: #23408e;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  font-family: 'Fredoka', 'Roboto', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+#p1 p, #p2 p {
+  font-size: 1.13rem;
+  color: #333;
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+#p2 img.realitypic {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(35,64,142,0.10);
+  margin-bottom: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main Heading Style */
+#realityheader h1 {
+  color: #FFCC00;
+  font-size: 2.7rem;
+  font-family: 'Fredoka', 'Roboto', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(35,64,142,0.10);
+}
+
+#p1 iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(35,64,142,0.13);
+  max-width: 100%;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <img src="https://img.icons8.com/ios-filled/50/FFCC00/idea.png" alt="Logo">
+        <h2 class="logo-title">SpotLight</h2>
+      </div>
+      <div class="header-icons">
+        <img src="https://img.icons8.com/material-outlined/24/002D72/new-post.png" alt="Contact" class="mail-icon">
+      </div>
+    </div>
+    <hr class="header-divider">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="topics-dropdown">Articles ▾
+          <ul class="dropdown-menu">
+            <li><a href="travel.html" class="dropdown-link">A Travel Guide To Japan For First-Timers</a></li>
+            <li><a href="reality.html" class="dropdown-link">Reality through my eyes</a></li>
+            <li><a href="ai.html" class="dropdown-link">Everyday Intelligence</a></li>
+            <li><a href="#" class="dropdown-link">Topic 4</a></li>
+            <li><a href="#" class="dropdown-link">Topic 5</a></li>
+            <li><a href="#" class="dropdown-link">Topic 6</a></li>
+            <li><a href="#" class="dropdown-link">Topic 7</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id = "realityheader">
+        <h1>Reality through my eyes</h1>
+        <h5 style="text-align: center;">By: Jeirold Kurt Ruiz</h5>
+    </section>
+
+    <section id = "p1">
+            <h1>Do we see reality as it is?</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/oYp5XuGYqqY?si=5d6DZ2WySdLv3hg2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>Reality isn’t reality, is what I initially thought after watching the video. How can I know that there is truly a reality if what I see is just an interpretation of what my eyes can see based on the knowledge I have? When there is far more knowledge I have yet to grasp. Hoffman says that the reality we see and acknowledge is a reality that we construct. “When we see a cube on a screen, it really isn’t a cube but a 2d image, but we perceive it as a cube”, how we look at things is how we construct our reality. Our perception is our window to reality, that is why throughout the years, we’ve had so many interpretations of what our reality is. Before we found out the world was a sphere, we thought it was flat because it looked that way. Different people see things differently, creating different realities.</p> 
+	        <p>The physical objects that we see, that we perceive as reality, aren't reality at all. Just a symbol of the “real” world. In my future profession, I would like you to start by broadening my perception on what I truly see, and understand the deeper meanings behind the symbols I come across. So that I can understand the different people I encounter and just how differently they perceive their own realities.</p>
+
+        
+    </section>
+
+    <section id = "p2">
+            <h1>Does the universe really exist when we’re not looking?</h1>
+            <img class = "realitypic" src = "realiy-check1.jpg" alt = "reality picture"/>
+            <p>	As he ponders over his time left in this world, he tries to grasp the question “How come existence?”. It was said that in Quantum Physics, our universe is heavily influenced by our observations. Why? Because the discovery of our universe itself is an observation by people before us. When we look at it, our universe is a giant interaction of various objects, down from the atoms that we can only see through a microscope. Based on what I have read and what really stood out to me was that, what we discover shapes our universe and reality itself. Therefore, is the answer to the title, “Does the universe really exist when we’re not looking?”, no it wouldn’t? Technically speaking, if philosophers didn’t think that there is more to the world than we know; We wouldn’t have come up with the concept of the universe nor would we know that it even exists. No one would truly know what the universe is, what it's made out of, what lies in it, if we weren’t looking. We only discover, when we learn how to ask questions. The universe wouldn’t exist, if we didn’t wonder about it.</p>
+        
+    </section>
+
+  
+  <footer class="section tips-footer tips-modern max-width">
+    <div class="tips-container tips-center">
+      <div class="tips-title-pill">Note:</div>
+      <p>All the statements above are derived from what I have come up with after watching the video linked above. If your thoughts and opinions do not coincide with what I have written. Please know that I do not mean any harm nor offense from my insights.</p>
+      <ul class="tips-list-modern">
+        <li><strong>All thoughts and opinion are valid.</strong> We all have our own minds that can form unique perspectives and that is acceptable.</li>
+        <li><strong>No opinion is wrong.</strong> We are all raised differently and our experiences shape our beliefs.</li>
+        <li><strong>Keep on wondering.</strong> Even the littlest thought about how something works can open our minds up on how to see it in a different light.</li>
+        <li><strong>You never know what the universe has in store for you.</strong></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-bar">© 2024. SpotLight – Curating Stories, Celebrating Culture. All Rights Reserved.</div>
+  <button id="scrollToTopBtn" title="Back to top">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#23408e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="11" fill="#fff"/><polyline points="7 13 12 8 17 13"/></svg>
+  </button>
+</body>
+<script>
+// Scroll to top button logic
+const scrollBtn = document.getElementById('scrollToTopBtn');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 200) {
+    scrollBtn.style.display = 'flex';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+<style>
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #FFCC00;
+  box-shadow: 0 6px 24px 0 rgba(35,64,142,0.22), 0 1.5px 6px 0 rgba(0,0,0,0.10);
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+}
+#scrollToTopBtn:hover {
+  background: #23408e;
+  box-shadow: 0 10px 36px 0 rgba(35,64,142,0.28), 0 2px 8px 0 rgba(0,0,0,0.13);
+}
+#scrollToTopBtn svg {
+  display: block;
+}
+</style>
