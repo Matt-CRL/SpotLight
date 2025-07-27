@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpotLight - Reaction article</title>
+  <title>SpotLight - Japan Travel Guide</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,9 +12,6 @@
       line-height: 1.6;
       color: #333;
     }
-    html, body {
-  overflow-x: hidden;
-}
     header {
       background: #fff;
       padding: 0;
@@ -161,6 +158,7 @@
         height: 220px;
       }
     }
+
     .hero-desc {
       background: #fff;
       max-width: 1000px;
@@ -203,6 +201,13 @@
       flex-direction: column;
       align-items: center;
     }
+    @media (max-width: 1100px) {
+      .where-container.where-center-img {
+        height: 200px;
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+    }
     .where-title {
       text-align: left;
       font-size: 2.2rem;
@@ -210,13 +215,35 @@
       margin-bottom: 32px;
       color: #222;
     }
-    .card-container {
+    .decline-image {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+
+    .decline-image img {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      border-radius: 16px;
+      border: 20px solid #23408e;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .decline-text {
+      color: #002D72;
+    }
+    .card-container {
+      display: flexbox;
       gap: 48px;
       justify-content: center;
       flex-wrap: nowrap;
       width: 100%;
       max-width: 100%;
+      margin-bottom: 20px;
     }
     @media (max-width: 1100px) {
       .card-container {
@@ -232,9 +259,11 @@
       }
     }
     .card {
+      margin-left: 370px;
       width: 320px;
-      background: white;
-      padding: 24px 20px 20px 20px;
+      background: rgb(255, 255, 255);
+      padding: 10px 10px 10px 10px;
+      padding-bottom: 10px;
       border-radius: 18px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.13);
       display: flex;
@@ -318,6 +347,25 @@
       flex-direction: column;
       align-items: center;
     }
+    .future-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+
+    .future-img img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+    }
+    .future-text p strong {
+      color: #FFCC00;
+    }
     .tips-modern .tips-title-pill {
       display: inline-block;
       background: #FFCC00;
@@ -333,7 +381,7 @@
       box-sizing: border-box;
     }
     .tips-footer p {
-      font-size: 1.6rem;
+      font-size: 1.1rem;
       margin-bottom: 28px;
       line-height: 1.7;
       color: #fff;
@@ -353,7 +401,7 @@
       text-align: left;
     }
     .tips-footer ul li {
-      font-size: 110%;
+      font-size: 1.08rem;
       margin-bottom: 18px;
       text-align: left;
     }
@@ -380,13 +428,13 @@
     .foods-title-pill {
       display: inline-block;
       background: #23408e;
-      color: #fff;
+      color: #ffffff;
       font-size: 1.5rem;
       font-weight: 500;
       padding: 16px 48px;
       border-radius: 32px;
       margin-bottom: 32px;
-      margin-left: 24px;
+      margin-left: 327px;
       box-shadow: 0 4px 18px rgba(35,64,142,0.13);
       letter-spacing: 0.5px;
       box-sizing: border-box;
@@ -460,66 +508,6 @@ nav ul li .nav-link:visited {
   text-decoration: none !important;
 }
 
-/* Section Styles sa akin*/
-#p1, #p2 {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(35,64,142,0.10);
-  padding: 40px 32px;
-  max-width: 900px;
-  margin: 32px auto;
-  transition: box-shadow 0.22s;
-}
-#p1:hover, #p2:hover {
-  box-shadow: 0 8px 32px rgba(35,64,142,0.18);
-}
-#p1 h1, #p2 h1 {
-  color: #23408e;
-  font-size: 2rem;
-  margin-bottom: 24px;
-  font-family: 'Fredoka', 'Roboto', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-#p1 p, #p2 p {
-  font-size: 1.13rem;
-  color: #333;
-  margin-bottom: 18px;
-  line-height: 1.8;
-}
-#p2 img.realitypic {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(35,64,142,0.10);
-  margin-bottom: 18px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Main Heading Style */
-#realityheader h1 {
-  color: #FFCC00;
-  font-size: 2.7rem;
-  font-family: 'Fredoka', 'Roboto', sans-serif;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 48px;
-  margin-bottom: 16px;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 12px rgba(35,64,142,0.10);
-}
-
-#p1 iframe {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 24px;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(35,64,142,0.13);
-  max-width: 100%;
-}
   </style>
 </head>
 <body>
@@ -552,46 +540,55 @@ nav ul li .nav-link:visited {
       </ul>
     </nav>
   </header>
+  <div class="hero-banner">
+  <img src="https://us.almawq3.com/wp-content/uploads/2024/11/6453ea26ab0681001d801bbb.jpg" alt="streaming services" class="hero-banner-img">
+</div>
+<section class="section hero-desc">
+  <h2>The Rise of Streaming</h2>
+  <h5>By: Javie T. Alfaro</h5>
+  <p>In the past couple of years, the entertainment industry has gone through a massive shift that has changed the landscape of various forms of media. Traditional TV and cinema have massively declined in favor of more modern and alternative platforms. The rise of streaming services such as Netflix, Disney+, Amazon, Hulu, and many others has changed the way people consume media. Revolutions are nothing new, we have seen its impact on various other industries before. This shift is part of the greater Digital Revolution, a force that, like many before it, has brought both progress and disruption. Seeing all the new changes in the traditional system, we must now analyze its’ consequences and find a good course of action to follow. </p>
+</section>
 
-  <section id = "realityheader">
-        <h1>Reality through my eyes</h1>
-        <h5 style="text-align: center;">By: Jeirold Kurt Ruiz</h5>
-    </section>
-
-    <section id = "p1">
-            <h1>Do we see reality as it is?</h1>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/oYp5XuGYqqY?si=5d6DZ2WySdLv3hg2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p>Reality isn’t reality, is what I initially thought after watching the video. How can I know that there is truly a reality if what I see is just an interpretation of what my eyes can see based on the knowledge I have? When there is far more knowledge I have yet to grasp. Hoffman says that the reality we see and acknowledge is a reality that we construct. “When we see a cube on a screen, it really isn’t a cube but a 2d image, but we perceive it as a cube”, how we look at things is how we construct our reality. Our perception is our window to reality, that is why throughout the years, we’ve had so many interpretations of what our reality is. Before we found out the world was a sphere, we thought it was flat because it looked that way. Different people see things differently, creating different realities.</p> 
-	        <p>The physical objects that we see, that we perceive as reality, aren't reality at all. Just a symbol of the “real” world. In my future profession, I would like you to start by broadening my perception on what I truly see, and understand the deeper meanings behind the symbols I come across. So that I can understand the different people I encounter and just how differently they perceive their own realities.</p>
-
-        
-    </section>
-
-    <section id = "p2">
-            <h1>Does the universe really exist when we’re not looking?</h1>
-            <img class = "realitypic" src = "realiy-check1.jpg" alt = "reality picture"/>
-            <p>	As he ponders over his time left in this world, he tries to grasp the question “How come existence?”. It was said that in Quantum Physics, our universe is heavily influenced by our observations. Why? Because the discovery of our universe itself is an observation by people before us. When we look at it, our universe is a giant interaction of various objects, down from the atoms that we can only see through a microscope. Based on what I have read and what really stood out to me was that, what we discover shapes our universe and reality itself. Therefore, is the answer to the title, “Does the universe really exist when we’re not looking?”, no it wouldn’t? Technically speaking, if philosophers didn’t think that there is more to the world than we know; We wouldn’t have come up with the concept of the universe nor would we know that it even exists. No one would truly know what the universe is, what it's made out of, what lies in it, if we weren’t looking. We only discover, when we learn how to ask questions. The universe wouldn’t exist, if we didn’t wonder about it.</p>
-        
-    </section>
-
-  
-  <footer class="section tips-footer tips-modern max-width">
-    <div class="tips-container tips-center">
-      <div class="tips-title-pill">Note:</div>
-      <p>All the statements above are derived from what I have come up with after watching the video linked above. If your thoughts and opinions do not coincide with what I have written. Please know that I do not mean any harm nor offense from my insights.</p>
-      <ul class="tips-list-modern">
-        <li><strong>All thoughts and opinion are valid.</strong> We all have our own minds that can form unique perspectives and that is acceptable.</li>
-        <li><strong>No opinion is wrong.</strong> We are all raised differently and our experiences shape our beliefs.</li>
-        <li><strong>Keep on wondering.</strong> Even the littlest thought about how something works can open our minds up on how to see it in a different light.</li>
-        <li><strong>You never know what the universe has in store for you.</strong></li>
-      </ul>
+<section class="section yellow-bg where-section fullwidth-where">
+  <div class="where-container where-center">
+    <h2 class="head1 where-title">The Decline of Traditional Media</h2>
+    <div class="decline-image">
+      <img src="https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/images/panoramic/getty_108352452_9706479704500173_44285.jpg" alt="Decline of TV">
     </div>
-  </footer>
-  <div class="footer-bar">© 2024. SpotLight – Curating Stories, Celebrating Culture. All Rights Reserved.</div>
-  <button id="scrollToTopBtn" title="Back to top">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#23408e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="11" fill="#fff"/><polyline points="7 13 12 8 17 13"/></svg>
-  </button>
+    <div class="decline-text">
+      <strong>
+        <p>Before the rise of streaming, television and movie theaters ruled the entertainment industry. They traditionally followed strict rules and rigid formulas that most TV networks and studios followed. Audiences were used to scheduled programming and conventional varieties of film. Genres such as sitcoms and late-night talk shows ruled television up until the 2000s. Most TV shows followed a seasonal format with 20+ episodes each. Meanwhile, movies typically follow a theatrical run, then a release on DVDs, and eventually cable TV. </p>
+        <p>However, with the decline of DVDs and physical media, the economic model of filmmaking has changed drastically. These days, sitcom and late-night shows all are largely dying and TV shows now usually have an average of 12 episodes per season. This issue was highlighted by actor Matt Damon in an interview on Hot Ones, noting that the fall of DVD sales has made studios less willing to invest in original, character-driven films. Instead, they favor large franchises that promise greater financial return. As a result, creative risk-taking in mainstream cinema has significantly diminished.</p>
+      </strong>
+    </div>
+  </section>
+
+<section class="section foods-section foods-modern">
+  <div class="foods-title-pill">The Streaming Takeover</div>
+  <p>The convenience of streaming services has largely been the root cause of these changes. There is no doubt that media is more accessible than ever before. These platforms have become a hub for experimental storytelling and international content. This was shown in the rise of new and non-english content such as Money Heist and Squid Game achieving global success. Moreover, writers and filmmakers have been able to receive much greater creative freedom to pursue more diverse projects. As a result, underrepresented groups and voices have been able to breach film and pop culture in general. </p>
+  <p>Despite all of these positive changes, not all aspects have been quite as smooth sailing. For one thing, the accessibility of entertainment has driven studios to continuously produce new content in much shorter time frames. The pressure to constantly release new content has led to an oversaturated market, where many shows and films feel repetitive or formulaic. Quality is often sacrificed for quantity, resulting in numerous reboots and sequels driven more by profit than creativity. Furthermore, the rise of many different streaming companies has lead to the decline of syndication. Subscription models now dominate, which incentivizes companies to exclusively lock their content in their own platforms. Consequently, users are now forced to juggle many platforms if they want to view their favorite shows and movies.</p>
+</section>
+
+<section class="section tips-footer tips-modern">
+  <div class="tips-container tips-center">
+    <div class="tips-title-pill">The Future</div>
+    <div class="future-img">
+      <img src="https://www.technology-innovators.com/wp-content/uploads/2023/05/The-Future-of-Media-and-Entertainment-Technology-Redefining-the-Entertainment-Experience-min.jpg" alt="Future of Media">
+    </div>
+      <div class="future-text">
+        <p>Syndication, once a mainstay of television distribution, has largely disappeared. This limits the long-term reach of many shows and restricts content availability. As the industry continues to evolve, it’s clear that we must <strong>weigh the benefits of innovation against the cost of losing traditional strengths</strong>. Streaming is here to stay with all its groundbreaking changes and exciting opportunities. The challenge lies in ensuring that the <strong>future of entertainment</strong> remains both <strong>accessible and creatively rich</strong>, while maintaining the <strong>essence</strong> of what filmmaking really is about.</p>
+      </div>
+    </div>
+</section>
+
+<div class="footer-bar">© 2024. SpotLight – Curating Stories, Celebrating Culture. All Rights Reserved.</div>
+
+<button id="scrollToTopBtn" title="Back to top">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#23408e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="11" fill="#fff"/><polyline points="7 13 12 8 17 13"/></svg>
+</button>
+
 </body>
+
 <script>
 // Scroll to top button logic
 const scrollBtn = document.getElementById('scrollToTopBtn');

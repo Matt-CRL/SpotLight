@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpotLight - Reaction article</title>
+  <title>SpotLight - Basketball Insights</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,9 +12,6 @@
       line-height: 1.6;
       color: #333;
     }
-    html, body {
-  overflow-x: hidden;
-}
     header {
       background: #fff;
       padding: 0;
@@ -161,6 +158,7 @@
         height: 220px;
       }
     }
+
     .hero-desc {
       background: #fff;
       max-width: 1000px;
@@ -203,6 +201,13 @@
       flex-direction: column;
       align-items: center;
     }
+    @media (max-width: 1100px) {
+      .where-container.where-center-img {
+        height: 200px;
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+    }
     .where-title {
       text-align: left;
       font-size: 2.2rem;
@@ -210,13 +215,35 @@
       margin-bottom: 32px;
       color: #222;
     }
-    .card-container {
+    .decline-image {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+
+    .decline-image img {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      border-radius: 16px;
+      border: 20px solid #23408e;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .decline-text {
+      color: #002D72;
+    }
+    .card-container {
+      display: flexbox;
       gap: 48px;
       justify-content: center;
       flex-wrap: nowrap;
       width: 100%;
       max-width: 100%;
+      margin-bottom: 20px;
     }
     @media (max-width: 1100px) {
       .card-container {
@@ -232,9 +259,11 @@
       }
     }
     .card {
+      margin-left: 370px;
       width: 320px;
-      background: white;
-      padding: 24px 20px 20px 20px;
+      background: rgb(255, 255, 255);
+      padding: 10px 10px 10px 10px;
+      padding-bottom: 10px;
       border-radius: 18px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.13);
       display: flex;
@@ -318,6 +347,25 @@
       flex-direction: column;
       align-items: center;
     }
+    .future-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+
+    .future-img img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+    }
+    .future-text p strong {
+      color: #FFCC00;
+    }
     .tips-modern .tips-title-pill {
       display: inline-block;
       background: #FFCC00;
@@ -333,7 +381,7 @@
       box-sizing: border-box;
     }
     .tips-footer p {
-      font-size: 1.6rem;
+      font-size: 1.1rem;
       margin-bottom: 28px;
       line-height: 1.7;
       color: #fff;
@@ -353,7 +401,7 @@
       text-align: left;
     }
     .tips-footer ul li {
-      font-size: 110%;
+      font-size: 1.08rem;
       margin-bottom: 18px;
       text-align: left;
     }
@@ -380,13 +428,13 @@
     .foods-title-pill {
       display: inline-block;
       background: #23408e;
-      color: #fff;
+      color: #ffffff;
       font-size: 1.5rem;
       font-weight: 500;
       padding: 16px 48px;
       border-radius: 32px;
       margin-bottom: 32px;
-      margin-left: 24px;
+      margin-left: 327px;
       box-shadow: 0 4px 18px rgba(35,64,142,0.13);
       letter-spacing: 0.5px;
       box-sizing: border-box;
@@ -460,66 +508,7 @@ nav ul li .nav-link:visited {
   text-decoration: none !important;
 }
 
-/* Section Styles sa akin*/
-#p1, #p2 {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(35,64,142,0.10);
-  padding: 40px 32px;
-  max-width: 900px;
-  margin: 32px auto;
-  transition: box-shadow 0.22s;
-}
-#p1:hover, #p2:hover {
-  box-shadow: 0 8px 32px rgba(35,64,142,0.18);
-}
-#p1 h1, #p2 h1 {
-  color: #23408e;
-  font-size: 2rem;
-  margin-bottom: 24px;
-  font-family: 'Fredoka', 'Roboto', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-#p1 p, #p2 p {
-  font-size: 1.13rem;
-  color: #333;
-  margin-bottom: 18px;
-  line-height: 1.8;
-}
-#p2 img.realitypic {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(35,64,142,0.10);
-  margin-bottom: 18px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-/* Main Heading Style */
-#realityheader h1 {
-  color: #FFCC00;
-  font-size: 2.7rem;
-  font-family: 'Fredoka', 'Roboto', sans-serif;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 48px;
-  margin-bottom: 16px;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 12px rgba(35,64,142,0.10);
-}
-
-#p1 iframe {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 24px;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(35,64,142,0.13);
-  max-width: 100%;
-}
   </style>
 </head>
 <body>
@@ -552,83 +541,92 @@ nav ul li .nav-link:visited {
       </ul>
     </nav>
   </header>
+  <div class="hero-banner">
+    <img src="court.jpg" alt="Basketball Court" class="hero-banner-img">
+  </div>
+  <section class="section hero-desc">
+    <h2>Background of Basketball</h2>
+    <h5>By: Paulo Miguel R. Limpin</h5>
+    <p>Basketball is more than just a sport; it's a global phenomenon that has influenced millions across generations. Created in 1891 by Dr. James Naismith, the sport was initially designed as an indoor activity for students during winter. Little did Naismith know, his invention would grow to become one of the most popular sports worldwide. Basketball combines athleticism, strategy, and teamwork, making it a thrilling spectacle for both players and fans.</p>
+    <p>Over time, basketball evolved from a simple game with a soccer ball and two peach baskets into a professional sport with leagues and tournaments on nearly every continent. The National Basketball Association (NBA), formed in 1946, helped bring global recognition to the sport, producing legendary figures like Michael Jordan, Kobe Bryant, and LeBron James. These icons not only elevated the game but also used their platforms to inspire social change and global unity.</p>
+  </section>
 
-  <section id = "realityheader">
-        <h1>Reality through my eyes</h1>
-        <h5 style="text-align: center;">By: Jeirold Kurt Ruiz</h5>
-    </section>
+  <section class="section yellow-bg where-section fullwidth-where">
+    <div class="where-container where-center">
+      <h2 class="head1 where-title">The Growth of the Game</h2>
+      <div class="decline-image">
+        <img src="celebration.jpg" alt="Basketball Championship Celebration">
+      </div>
+      <div class="decline-text">
+        <strong>
+          <p>Basketball’s growth has been exponential, thanks to international events such as the Olympics, FIBA World Cup, and the rise of international NBA players. Countries like the Philippines, China, and Argentina have embraced the sport as part of their national culture. In the Philippines, for instance, basketball is deeply ingrained in everyday life. From makeshift courts in rural areas to professional leagues like the PBA, the sport provides joy, hope, and identity for many Filipinos.</p>
+          <p>Technological advancements have also contributed to basketball's rise. With streaming services and social media, games and highlights are accessible to fans around the globe. This has allowed younger generations to follow their idols, learn the sport, and dream of playing on the world stage. Basketball has truly become a unifying force that transcends language and borders.</p>
+        </strong>
+      </div>
+  </section>
 
-    <section id = "p1">
-            <h1>Do we see reality as it is?</h1>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/oYp5XuGYqqY?si=5d6DZ2WySdLv3hg2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p>Reality isn’t reality, is what I initially thought after watching the video. How can I know that there is truly a reality if what I see is just an interpretation of what my eyes can see based on the knowledge I have? When there is far more knowledge I have yet to grasp. Hoffman says that the reality we see and acknowledge is a reality that we construct. “When we see a cube on a screen, it really isn’t a cube but a 2d image, but we perceive it as a cube”, how we look at things is how we construct our reality. Our perception is our window to reality, that is why throughout the years, we’ve had so many interpretations of what our reality is. Before we found out the world was a sphere, we thought it was flat because it looked that way. Different people see things differently, creating different realities.</p> 
-	        <p>The physical objects that we see, that we perceive as reality, aren't reality at all. Just a symbol of the “real” world. In my future profession, I would like you to start by broadening my perception on what I truly see, and understand the deeper meanings behind the symbols I come across. So that I can understand the different people I encounter and just how differently they perceive their own realities.</p>
+  <section class="section foods-section foods-modern">
+    <div class="foods-title-pill">Basketball's Cultural Impact</div>
+    <p>Basketball is not just about winning games; it’s about culture, identity, and community. From sneakers to streetwear, the influence of basketball reaches beyond the court. The game has inspired countless fashion trends, music, films, and even educational programs. Initiatives like Jr. NBA and NBA Cares show how basketball is being used as a tool for youth development and social change.</p>
+    <p>Moreover, the sport fosters discipline, teamwork, and leadership—skills that are applicable in real life. It teaches players how to handle pressure, bounce back from failure, and celebrate success with humility. Whether you are a player or a fan, basketball has a way of bringing people together and creating lasting memories that extend far beyond the final buzzer.</p>
+  </section>
 
-        
-    </section>
-
-    <section id = "p2">
-            <h1>Does the universe really exist when we’re not looking?</h1>
-            <img class = "realitypic" src = "realiy-check1.jpg" alt = "reality picture"/>
-            <p>	As he ponders over his time left in this world, he tries to grasp the question “How come existence?”. It was said that in Quantum Physics, our universe is heavily influenced by our observations. Why? Because the discovery of our universe itself is an observation by people before us. When we look at it, our universe is a giant interaction of various objects, down from the atoms that we can only see through a microscope. Based on what I have read and what really stood out to me was that, what we discover shapes our universe and reality itself. Therefore, is the answer to the title, “Does the universe really exist when we’re not looking?”, no it wouldn’t? Technically speaking, if philosophers didn’t think that there is more to the world than we know; We wouldn’t have come up with the concept of the universe nor would we know that it even exists. No one would truly know what the universe is, what it's made out of, what lies in it, if we weren’t looking. We only discover, when we learn how to ask questions. The universe wouldn’t exist, if we didn’t wonder about it.</p>
-        
-    </section>
-
-  
-  <footer class="section tips-footer tips-modern max-width">
+  <section class="section tips-footer tips-modern">
     <div class="tips-container tips-center">
-      <div class="tips-title-pill">Note:</div>
-      <p>All the statements above are derived from what I have come up with after watching the video linked above. If your thoughts and opinions do not coincide with what I have written. Please know that I do not mean any harm nor offense from my insights.</p>
-      <ul class="tips-list-modern">
-        <li><strong>All thoughts and opinion are valid.</strong> We all have our own minds that can form unique perspectives and that is acceptable.</li>
-        <li><strong>No opinion is wrong.</strong> We are all raised differently and our experiences shape our beliefs.</li>
-        <li><strong>Keep on wondering.</strong> Even the littlest thought about how something works can open our minds up on how to see it in a different light.</li>
-        <li><strong>You never know what the universe has in store for you.</strong></li>
-      </ul>
+      <div class="tips-title-pill">Looking Ahead</div>
+      <div class="future-img">
+        <img src="players.jpg" alt="Young Basketball Player">
+      </div>
+      <div class="future-text">
+        <p>Basketball’s future looks bright as new generations continue to embrace the sport. Technological innovations, growing diversity, and global accessibility ensure that basketball remains relevant and influential. As the game continues to evolve, it must preserve its roots—sportsmanship, integrity, and unity. Whether you're watching from the sidelines or stepping onto the court, basketball invites you to be part of something bigger than yourself.</p>
+      </div>
     </div>
-  </footer>
+  </section>
+
   <div class="footer-bar">© 2024. SpotLight – Curating Stories, Celebrating Culture. All Rights Reserved.</div>
+
   <button id="scrollToTopBtn" title="Back to top">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#23408e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="11" fill="#fff"/><polyline points="7 13 12 8 17 13"/></svg>
   </button>
+
+  <script>
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 200) {
+        scrollBtn.style.display = 'flex';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <style>
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 36px;
+      right: 36px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #FFCC00;
+      box-shadow: 0 6px 24px 0 rgba(35,64,142,0.22), 0 1.5px 6px 0 rgba(0,0,0,0.10);
+      border: none;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+    }
+    #scrollToTopBtn:hover {
+      background: #23408e;
+      box-shadow: 0 10px 36px 0 rgba(35,64,142,0.28), 0 2px 8px 0 rgba(0,0,0,0.13);
+    }
+    #scrollToTopBtn svg {
+      display: block;
+    }
+  </style>
 </body>
-<script>
-// Scroll to top button logic
-const scrollBtn = document.getElementById('scrollToTopBtn');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 200) {
-    scrollBtn.style.display = 'flex';
-  } else {
-    scrollBtn.style.display = 'none';
-  }
-});
-scrollBtn.addEventListener('click', function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
-<style>
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 36px;
-  right: 36px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #FFCC00;
-  box-shadow: 0 6px 24px 0 rgba(35,64,142,0.22), 0 1.5px 6px 0 rgba(0,0,0,0.10);
-  border: none;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1000;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
-}
-#scrollToTopBtn:hover {
-  background: #23408e;
-  box-shadow: 0 10px 36px 0 rgba(35,64,142,0.28), 0 2px 8px 0 rgba(0,0,0,0.13);
-}
-#scrollToTopBtn svg {
-  display: block;
-}
-</style>
+</html>
