@@ -93,6 +93,11 @@
     nav ul li.topics-dropdown:hover .dropdown-menu {
       display: block;
     }
+    
+    /* Show dropdown when JavaScript adds 'show' class */
+    nav ul li .dropdown-menu.show {
+      display: block;
+    }
     nav ul li .dropdown-menu li {
       color: #23408e;
       font-size: 1rem;
@@ -187,6 +192,7 @@
       letter-spacing: 0.5px;
       font-family: 'Roboto', sans-serif;
     }
+    /* Mobile Responsive Styles */
     @media (max-width: 900px) {
       .hero-home {
         height: 220px;
@@ -200,6 +206,261 @@
       .cta-btn {
         padding: 12px 24px;
         font-size: 1rem;
+      }
+    }
+
+    /* Phone-specific responsive styles */
+    @media (max-width: 768px) {
+      /* Header adjustments */
+      .header-top {
+        padding: 16px 20px 0 20px;
+      }
+      
+      .logo-title {
+        font-size: 1.4rem;
+      }
+      
+      .logo img {
+        height: 28px;
+        margin-right: 8px;
+      }
+      
+      .mail-icon {
+        height: 24px;
+        width: 24px;
+        margin-left: 16px;
+      }
+
+      /* Navigation adjustments */
+      nav ul {
+        gap: 20px;
+        padding: 0 0 0 20px;
+        height: 40px;
+      }
+      
+      nav ul li {
+        font-size: 1rem;
+      }
+      
+      nav ul li .dropdown-menu {
+        min-width: 160px;
+      }
+      
+      nav ul li .dropdown-menu .dropdown-link {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+      }
+
+      /* Hero section adjustments */
+      .hero-home {
+        height: 180px;
+        padding: 20px;
+      }
+      
+      .hero-home-content {
+        max-width: 100%;
+        padding: 0 10px;
+      }
+      
+      .hero-home-content h1 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+      }
+      
+      .hero-home-content p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+      }
+      
+      .cta-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        border-radius: 24px;
+      }
+
+
+      .footer-bar {
+        font-size: 0.9rem;
+        padding: 20px 15px;
+        line-height: 1.4;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-top {
+        padding: 12px 15px 0 15px;
+      }
+      
+      .logo-title {
+        font-size: 1.2rem;
+      }
+      
+      .logo img {
+        height: 24px;
+        margin-right: 6px;
+      }
+      
+      .mail-icon {
+        height: 20px;
+        width: 20px;
+        margin-left: 12px;
+      }
+
+      nav ul {
+        gap: 15px;
+        padding: 0 0 0 15px;
+        height: 36px;
+      }
+      
+      nav ul li {
+        font-size: 0.9rem;
+      }
+      
+      nav ul li .dropdown-menu {
+        min-width: 140px;
+      }
+      
+      nav ul li .dropdown-menu .dropdown-link {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+
+      .hero-home {
+        height: 160px;
+        padding: 15px;
+      }
+      
+      .hero-home-content h1 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+      
+      .hero-home-content p {
+        font-size: 0.8rem;
+        margin-bottom: 16px;
+      }
+      
+      .cta-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+      }
+
+      .footer-bar {
+        font-size: 0.8rem;
+        padding: 16px 10px;
+      }
+    }
+
+    /* Extra small phone styles */
+    @media (max-width: 360px) {
+      .header-top {
+        padding: 10px 12px 0 12px;
+      }
+      
+      .logo-title {
+        font-size: 1.1rem;
+      }
+      
+      .logo img {
+        height: 22px;
+        margin-right: 5px;
+      }
+      
+      .mail-icon {
+        height: 18px;
+        width: 18px;
+        margin-left: 10px;
+      }
+
+      nav ul {
+        gap: 12px;
+        padding: 0 0 0 12px;
+        height: 32px;
+      }
+      
+      nav ul li {
+        font-size: 0.85rem;
+      }
+      
+      nav ul li .dropdown-menu {
+        min-width: 120px;
+      }
+      
+      nav ul li .dropdown-menu .dropdown-link {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+      }
+
+      .hero-home {
+        height: 140px;
+        padding: 12px;
+      }
+      
+      .hero-home-content h1 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+      
+      .hero-home-content p {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+      }
+      
+      .cta-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        border-radius: 16px;
+      }
+
+      .footer-bar {
+        font-size: 0.75rem;
+        padding: 12px 8px;
+      }
+    }
+
+    /* Mobile dropdown styles */
+    @media (max-width: 768px) {
+      nav ul li.topics-dropdown {
+        position: relative;
+      }
+      
+      nav ul li .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        min-width: 200px;
+        box-shadow: 0 6px 24px 0 rgba(35,64,142,0.13);
+        border-radius: 8px;
+        padding: 8px 0;
+        z-index: 1000;
+        display: none;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      
+      nav ul li .dropdown-menu.show {
+        display: block;
+      }
+      
+      nav ul li .dropdown-menu .dropdown-link {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      
+      nav ul li .dropdown-menu .dropdown-link:last-child {
+        border-bottom: none;
+      }
+      
+      nav ul li .dropdown-menu .dropdown-link:hover {
+        background: #FFCC00;
+        color: #23408e;
       }
     }
     nav ul li .nav-link {
@@ -269,4 +530,61 @@ nav ul li .nav-link:visited {
   </div>
   <div class="footer-bar">© 2024. SpotLight – Curating Stories, Celebrating Culture. All Rights Reserved.</div>
 </body>
+
+<script>
+// Mobile dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownToggle = document.querySelector('.topics-dropdown');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  
+  // Check if device supports touch
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  if (isTouchDevice) {
+    // For touch devices, use click events
+    dropdownToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Close any other open dropdowns
+      const allDropdowns = document.querySelectorAll('.dropdown-menu');
+      allDropdowns.forEach(dropdown => {
+        if (dropdown !== dropdownMenu) {
+          dropdown.classList.remove('show');
+        }
+      });
+      
+      // Toggle current dropdown
+      dropdownMenu.classList.toggle('show');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+    
+    // Close dropdown when clicking on a link
+    const dropdownLinks = document.querySelectorAll('.dropdown-link');
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        dropdownMenu.classList.remove('show');
+      });
+    });
+  }
+  
+  // For non-touch devices, keep the hover functionality
+  if (!isTouchDevice) {
+    dropdownToggle.addEventListener('mouseenter', function() {
+      dropdownMenu.classList.add('show');
+    });
+    
+    dropdownToggle.addEventListener('mouseleave', function() {
+      dropdownMenu.classList.remove('show');
+    });
+  }
+});
+</script>
+
 </html> 
