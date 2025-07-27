@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<!--
+			Name: Aquino, Tyrone Andrei C.
+			Section: CS-303
+		-->
+		<title>SpotLight - Impact Of Technolofy In Our Life</title>
+		<meta charset = "utf-8/">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+			  margin: 0;
+			  font-family: 'Roboto', sans-serif;
+			  line-height: 1.6;
+			  color: #333;
+			}
+			header {
+			  background: #fff;
+			  padding: 0;
+			  border-bottom: none;
+			  box-shadow: none;
+			}
+			.header-top {
+			  display: flex;
+			  justify-content: space-between;
+			  align-items: center;
+			  padding: 24px 40px 0 40px;
+			}
+			.logo {
+			  display: flex;
+			  align-items: center;
+			}
+			.logo img {
+			  height: 36px;
+			  margin-right: 10px;
+			}
+			.logo-title {
+			  color: #002D72;
+			  font-size: 1.7rem;
+			  font-family: 'Fredoka', 'Roboto', sans-serif;
+			  font-weight: 700;
+			  margin: 0;
+			  letter-spacing: 1px;
+			}
+			.header-icons {
+			  display: flex;
+			  align-items: center;
+			}
+			.mail-icon {
+			  height: 28px;
+			  width: 28px;
+			  margin-left: 20px;
+			}
+			.header-divider {
+			  border: none;
+			  border-top: 2px solid #ccc;
+			  margin: 16px 0 0 0;
+			}
+			nav ul {
+			  list-style: none;
+			  display: flex;
+			  gap: 30px;
+			  padding: 0 0 0 40px;
+			  margin: 0;
+			  align-items: center;
+			  height: 48px;
+			  position: relative;
+			}
+			nav ul li {
+			  cursor: pointer;
+			  font-size: 1.1rem;
+			  color: #333;
+			  position: relative;
+			}
+			
+			/* Dropdown styles */
+			nav ul li.topics-dropdown {
+			  position: relative;
+			  overflow: visible;
+			}
+			nav ul li .dropdown-menu {
+			  display: none;
+			  position: absolute;
+			  top: 100%;
+			  left: 0;
+			  background: #fff;
+			  min-width: 180px;
+			  box-shadow: 0 6px 24px 0 rgba(35,64,142,0.13);
+			  border-radius: 0;
+			  padding: 0;
+			  z-index: 100;
+			  overflow: visible;
+			  max-height: none;
+			  box-sizing: border-box;
+			}
+			nav ul li.topics-dropdown:hover .dropdown-menu {
+			  display: block;
+			}
+			nav ul li .dropdown-menu li {
+			  color: #23408e;
+			  font-size: 1rem;
+			  padding: 14px 24px;
+			  white-space: nowrap;
+			  transition: background 0.18s, color 0.18s;
+			  border-radius: 0;
+			  background: #fff;
+			  border-bottom: 1px solid #f0f0f0;
+			}
+			nav ul li .dropdown-menu li:last-child {
+			  border-bottom: none;
+			}
+			nav ul li .dropdown-menu li:hover {
+			  background: #FFCC00;
+			  color: #23408e;
+			}
+			nav ul li .dropdown-menu .dropdown-link {
+			  color: #23408e;
+			  text-decoration: none;
+			  display: block;
+			  width: 100%;
+			  height: 100%;
+			  padding: 14px 24px;
+			  background: #fff;
+			  transition: background 0.18s, color 0.18s;
+			  border-radius: 0;
+			  box-sizing: border-box;
+			  margin: 0;
+			}
+			nav ul li .dropdown-menu .dropdown-link:hover {
+			  background: #FFCC00;
+			  color: #23408e;
+			  text-decoration: none;
+			  box-sizing: border-box;
+			  margin: 0;
+			}
+			nav ul li .nav-link {
+			  color: #333;
+			  text-decoration: none;
+			  font-size: 1.1rem;
+			  padding: 0 4px;
+			  transition: color 0.18s;
+			}
+			nav ul li .nav-link:hover {
+			  color: #23408e;
+			  text-decoration: none;
+			}
+			nav ul li .nav-link:active {
+			  text-decoration: none;
+			}
+			nav a,
+			nav ul li a,
+			nav ul li .nav-link,
+			nav ul li .nav-link:hover,
+			nav ul li .nav-link:focus,
+			nav ul li .nav-link:active,
+			nav a:visited,
+			nav ul li a:visited,
+			nav ul li .nav-link:visited {
+			  text-decoration: none !important;
+			}
+			.footer-bar {
+			  background: #FFCC00;
+			  color: #fff;
+			  text-align: center;
+			  font-size: 1.08rem;
+			  padding: 24px 0 20px 0;
+			  letter-spacing: 0.5px;
+			  font-family: 'Roboto', sans-serif;
+			}
+			
+			
+			.tips-title-pill {
+			  display: inline-block;
+			  background: #FFCC00;
+			  color: #23408e;
+			  font-size: 2rem;
+			  font-weight: 500;
+			  padding: 16px 48px;
+			  border-radius: 32px;
+			  margin-bottom: 32px;
+			  margin-left: 0;
+			  box-shadow: 0 4px 18px rgba(255,204,0,0.13);
+			  letter-spacing: 0.5px;
+			  box-sizing: border-box;
+			}
+			.tips-container.tips-center {
+			  max-width: 1100px;
+			  margin: 0 auto;
+			  padding: 0 32px;
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			}
+			.tips-footer p {
+			  font-size: 1.1rem;
+			  margin-bottom: 28px;
+			  line-height: 1.7;
+			  color: #fff;
+			  max-width: 900px;
+			  margin-left: 0;
+			  margin-right: 0;
+			  text-align: center;
+			}
+			.tips-modern .tips-title-pill {
+			  display: inline-block;
+			  background: #FFCC00;
+			  color: #23408e;
+			  font-size: 2rem;
+			  font-weight: 500;
+			  padding: 16px 48px;
+			  border-radius: 32px;
+			  margin-bottom: 32px;
+			  margin-left: 0;
+			  box-shadow: 0 4px 18px rgba(255,204,0,0.13);
+			  letter-spacing: 0.5px;
+			  box-sizing: border-box;
+			}
+			.tips-footer {
+			  background: #23408e;
+			  color: #fff;
+			  padding: 56px 0 40px 0;
+			  margin-top: 0;
+			  border-radius: 0;
+			  box-shadow: none;
+			  width: 100vw;
+			  min-width: 100vw;
+			  left: 0;
+			  right: 0;
+			  position: relative;
+			  margin-left: 0;
+			  margin-right: 0;
+			}
+			
+			/*My Styles*/
+			
+			.tips-footer strong {
+			  color: #FFCC00;
+			}
+			
+			#a1, .a23 {
+			  background: #fff;
+			  border-radius: 18px;
+			  box-shadow: 0 4px 24px rgba(35,64,142,0.10);
+			  padding: 40px 32px;
+			  max-width: 900px;
+			  margin: 32px auto;
+			  transition: box-shadow 0.22s;
+			}
+			
+			#a1 h1, .a23 h2 {
+			  color: #23408e;
+			  font-size: 2rem;
+			  margin-bottom: 24px;
+			  font-family: 'Fredoka', 'Roboto', sans-serif;
+			  font-weight: 700;
+			  letter-spacing: 0.5px;
+			}
+			
+			#a1{
+				text-align: center;
+			}
+			
+			#a1 h1{
+			  color: #FFCC00;
+			  font-size: 2.7rem;
+			  margin-bottom: 24px;
+			  font-family: 'Fredoka', 'Roboto', sans-serif;
+			  font-weight: 700;
+			  letter-spacing: 0.5px;
+			}
+			
+			#a1 p, .a23 p, .a23 ul>li {
+			  font-size: 1.13rem;
+			  color: #333;
+			  margin-bottom: 18px;
+			  line-height: 1.8;
+			  type: square;
+			}
+			
+			.a23 strong{
+				color: #23408e;
+			}
+			
+			.a23 ol>li{
+				font-size: 1.5rem;
+			  color: #23408e;
+			  margin-bottom: 18px;
+			  line-height: 1.8;
+			  font-weight: bold;
+			}
+			
+			#a1 img.tech{
+			  width: 100%;
+			  max-width: 420px;
+			  border-radius: 14px;
+			  box-shadow: 0 2px 12px rgba(35,64,142,0.10);
+			  margin-bottom: 18px;
+			  display: block;
+			  margin-left: auto;
+			  margin-right: auto;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+	<header>
+		<div class="header-top">
+		  <div class="logo">
+			<img src="https://img.icons8.com/ios-filled/50/FFCC00/idea.png" alt="Logo">
+			<h2 class="logo-title">SpotLight</h2>
+		  </div>
+		  <div class="header-icons">
+			<img src="https://img.icons8.com/material-outlined/24/002D72/new-post.png" alt="Contact" class="mail-icon">
+		  </div>
+		</div>
+		<hr class="header-divider">
+		<nav>
+		  <ul>
+			<li><a href="index.html" class="nav-link">Home</a></li>
+			<li class="topics-dropdown">Articles ▾
+			  <ul class="dropdown-menu">
+				<li><a href="travel.html" class="dropdown-link">A Travel Guide To Japan For First-Timers</a></li>
+				<li><a href="reality.html" class="dropdown-link">Reality through my eyes</a></li>
+				<li><a href="ai.html" class="dropdown-link">Everyday Intelligence</a></li>
+				<li><a href="technology.html" class="dropdown-link">Impact Of Technolofy In Our Life</a></li>
+				<li><a href="#" class="dropdown-link">Topic 5</a></li>
+				<li><a href="#" class="dropdown-link">Topic 6</a></li>
+				<li><a href="#" class="dropdown-link">Topic 7</a></li>
+			  </ul>
+			</li>
+			<li><a href="about.html" class="nav-link">About Us</a></li>
+		  </ul>
+		</nav>
+	  </header>
+		
+		
+		
+		<article id="a1">
+			<h1>Impact of Technology in Our Lives</h1>
+			<img class="tech" src="business.jpg" alt="Technolgy in Work">
+			<p>Technology has undeniably impacted our lives, transforming work, communication, and living. From smartphones to smart homes, it has changed everything from alarm clocks to hardware gadgets.</p>
+			<p>This article explores the impact of technology on our lives and its role in shaping society, despite our undeniable dependence on it.</p>
+		</article>
+		
+		<article class="a23">
+			<h2>Positive Impacts of Technology</h2>
+			<p>Technology has been a driving force behind remarkable progress. It simplifies how we work and communicate to advancing different fields.</p>
+			<ol>
+				<li>Workplace</li>
+					<p>Technology has transformed our lives in the workplace the most.</p>
+					<ul>
+						<li><strong>Increased efficiency:</strong> Computers and software have revolutionized tasks that were usually time-consuming, saving time and increasing overall productivity by enabling quicker completion of tasks.</li>
+						<li><strong>Easy automation:</strong> Technology enhances efficiency by automating both routine and complex tasks; sophisticated software tools now perform data analysis in seconds.</li>
+						<li><strong>Better collaboration:</strong>  Communication within organizations has also been streamlined through emails, instant messaging, and video conferencing, making it easier for teams to collaborate regardless of where they are in the world.</li><br>
+					</ul>
+				<li>Medical Advancement</li>
+					<p>Technology has played an important role in the field of healthcare, leading to numerous advancements.</p>
+					<ul>
+						<li><strong>Diagnosis and treatment:</strong> Healthcare professionals utilize advanced technologies to provide accurate diagnoses and effective treatments to patients.</li>
+						<li><strong>Improved research outcomes:</strong>  Technology has accelerated the discovery of new treatments, medicines, and drugs, contributing significantly to our collective well-being.</li>
+						<li><strong>Telemedicine:</strong> Telemedicine, the practice of providing medical care remotely, is increasingly beneficial for individuals in remote or underserved areas, enabling them to receive video consultations with healthcare providers from the comfort of their homes.</li><br>
+					</ul>
+				<li>Global Communication</li>
+					<p>The internet, along with its technologies, has long been a vital tool for communication, allowing us to connect to different parts of the world in real time.</p>
+					<ul>
+						<li><strong>Remote work collaboration:</strong> The internet offers virtual meetings, real-time project discussions, seamless collaboration, and AI-generated transcripts for virtual meetings with colleagues from different places in the world.</li>
+						<li><strong>More learning opportunities:</strong> With the internet, we can access a vast repository of knowledge and educational resources from renowned institutions around the world, expanding our education and skills without leaving the premises of our home.</li>
+						<li><strong>Better social connections:</strong> Reconnecting with friends despite the distance brings joy, allowing real-time conversations and the sharing of memories.</li><br>
+					</ul>
+			</ol>
+		</article>
+		
+		<article class="a23">
+			<h2>Negative Impacts of Technology</h2>
+			<p>Technology has without a doubt made our lives more convenient and efficient, offering us many things. However, as technology has positives, it also has negatives.</p>
+			<ol>
+				<li>Privacy and Data Breaches</li>
+					<p>The internet exposes cyberspace to vulnerabilities that can compromise personal information.</p>
+					<ul>
+						<li><strong>Loss of privacy:</strong> The digital landscape highlights the necessity of personal information, including social media posts, medical records, and financial transactions, which can benefit businesses and organizations but also compromise users's privacy.</li>
+						<li><strong>Data breaches:</strong> Data breaches expose millions' personal information, causing identity theft, financial loss, cyber crimes, and vulnerability. VPNs protect IP and encrypt online data, preventing such incidents.</li><br>
+					</ul>
+				<li>Distractions in a Tech-driven World</li>
+					<p>Technology can distract people from work and lead to a loss of productivity when misused or overused for non-work-related activities.</p>
+					<ul>
+						<li><strong>Higher distractions:</strong> The digital age's constant distractions, such as social media, emails, and apps, can significantly hinder productivity and make it easier to lose focus on important tasks..</li>
+						<li><strong>Loss of productivity:</strong> People often spend excessive time on screens, causing constant distraction and affecting efficiency and concentration. The constant presence of technology blurs the lines between work and personal life, leading to perpetual alertness.</li>
+					</ul>
+			</ol>
+		</article>
+		
+		<footer class="section tips-footer tips-modern">
+			<div class="tips-container tips-center">
+				<div class="tips-title-pill">Technology: Butler or Boss</div>
+				<p>Think of technology as a reliable <strong>butler</strong>. It offers convenience, efficiency, and connectivity, making our lives more comfortable, productive, and enjoyable. However, if unchecked, it can become a demanding <strong>boss</strong>, leading to mindless scrolling, unnecessary notifications, and overwhelming information overload.</p>
+			</div>
+		</footer>
+		
+		<div class="footer-bar">© 2024. SpotLight – Curating Stories, Celebrating Culture. All Rights Reserved.</div>
+		<button id="scrollToTopBtn" title="Back to top">
+			<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#23408e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="11" fill="#fff"/><polyline points="7 13 12 8 17 13"/></svg>
+		 </button>
+
+	</body>
+	<script>
+	// Scroll to top button logic
+	const scrollBtn = document.getElementById('scrollToTopBtn');
+	window.addEventListener('scroll', function() {
+	  if (window.scrollY > 200) {
+		scrollBtn.style.display = 'flex';
+	  } else {
+		scrollBtn.style.display = 'none';
+	  }
+	});
+	scrollBtn.addEventListener('click', function() {
+	  window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
+	</script>
+	<style>
+	#scrollToTopBtn {
+	  position: fixed;
+	  bottom: 36px;
+	  right: 36px;
+	  width: 56px;
+	  height: 56px;
+	  border-radius: 50%;
+	  background: #FFCC00;
+	  box-shadow: 0 6px 24px 0 rgba(35,64,142,0.22), 0 1.5px 6px 0 rgba(0,0,0,0.10);
+	  border: none;
+	  display: none;
+	  align-items: center;
+	  justify-content: center;
+	  cursor: pointer;
+	  z-index: 1000;
+	  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+	}
+	#scrollToTopBtn:hover {
+	  background: #23408e;
+	  box-shadow: 0 10px 36px 0 rgba(35,64,142,0.28), 0 2px 8px 0 rgba(0,0,0,0.13);
+	}
+	#scrollToTopBtn svg {
+	  display: block;
+	}
+	</style>
+</html>
